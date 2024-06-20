@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record model="ir.actions.server" id="action_google_drive_api">
+            <field name="name">Google import</field>
+            <field name="model_id" ref="model_mrp_bom"/>
+            <field name="state">code</field>
+            <field name="code">model.google_drive_api_action()</field>
+        </record>
+
+        <record model="ir.actions.server" id="action_google_drive_api_tip">
+            <field name="name">Google import tip</field>
+            <field name="model_id" ref="model_mrp_bom"/>
+            <field name="state">code</field>
+            <field name="code">model.google_drive_api_action(False)</field>
+        </record>
+
+        <menuitem id="menu_google_import"
+                  name="Google import"
+                  parent="mrp.menu_mrp_configuration"
+                  action="action_google_drive_api"
+                  sequence="120"/>
+
+        <menuitem id="menu_google_import_tip"
+                  name="Google import tip"
+                  parent="mrp.menu_mrp_configuration"
+                  action="action_google_drive_api_tip"
+                  sequence="120"/>
+
+    </data>
+</odoo>

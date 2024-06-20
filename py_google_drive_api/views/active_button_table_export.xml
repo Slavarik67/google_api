@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+         <record id="picking_transport_info_export_view" model="ir.ui.view">
+        <field name="name">picking.transport.info.export.view</field>
+        <field name="model">picking.transport.info</field>
+        <field name="inherit_id" ref="odoo_transport_management.picking_transport_info_form_view"/>
+         <field name="arch" type="xml">
+            <xpath expr="//header">
+                <button name="google_sheets_api_action" type="object" string="Export table"/>
+            </xpath>
+         </field>
+    </record>
+</odoo>
